@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-07-06T06:34:00 ICT" name="Default suite" finished-at="2023-07-06T06:34:24 ICT" duration-ms="23985">
+    <groups>
+    </groups>
+    <test started-at="2023-07-06T06:34:00 ICT" name="Default test" finished-at="2023-07-06T06:34:24 ICT" duration-ms="23985">
+      <class name="automation.testsuite.ThangDuong.LoginTest">
+        <test-method is-config="true" signature="openChromeDriver()[pri:0, instance:automation.testsuite.ThangDuong.LoginTest@413d1baf]" started-at="2023-07-06T06:34:00 ICT" name="openChromeDriver" finished-at="2023-07-06T06:34:16 ICT" duration-ms="16614" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openChromeDriver -->
+        <test-method signature="loginSuccesfulluy()[pri:0, instance:automation.testsuite.ThangDuong.LoginTest@413d1baf]" started-at="2023-07-06T06:34:16 ICT" name="loginSuccesfulluy" finished-at="2023-07-06T06:34:23 ICT" duration-ms="6828" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginSuccesfulluy -->
+        <test-method is-config="true" signature="closeChromeBrowser()[pri:0, instance:automation.testsuite.ThangDuong.LoginTest@413d1baf]" started-at="2023-07-06T06:34:23 ICT" name="closeChromeBrowser" finished-at="2023-07-06T06:34:24 ICT" duration-ms="462" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeChromeBrowser -->
+      </class> <!-- automation.testsuite.ThangDuong.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
