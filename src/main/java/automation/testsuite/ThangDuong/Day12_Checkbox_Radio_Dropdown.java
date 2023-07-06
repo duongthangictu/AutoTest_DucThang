@@ -1,4 +1,4 @@
-package automation.testsuite;
+package automation.testsuite.ThangDuong;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

@@ -1,13 +1,10 @@
-package automation.testsuite;
-import org.testng.annotations.Test;
-
+package automation.testsuite.ThangDuong;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 
 public class Day12_MultiCheckbox extends automation.common.CommonBase{
