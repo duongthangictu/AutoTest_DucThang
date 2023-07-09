@@ -1,29 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="1" total="1" passed="0" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-07T00:22:57 ICT" name="Default suite" finished-at="2023-07-07T00:23:19 ICT" duration-ms="21502">
+  <suite started-at="2023-07-09T08:33:31 ICT" name="Default suite" finished-at="2023-07-09T08:33:47 ICT" duration-ms="15315">
     <groups>
     </groups>
-    <test started-at="2023-07-07T00:22:57 ICT" name="Default test" finished-at="2023-07-07T00:23:19 ICT" duration-ms="21502">
-      <class name="automation.testsuite.ThangDuong.Day13_LoginTest">
-        <test-method is-config="true" signature="openChromeDriver()[pri:0, instance:automation.testsuite.ThangDuong.Day13_LoginTest@16eb3ea3]" started-at="2023-07-07T00:22:57 ICT" name="openChromeDriver" finished-at="2023-07-07T00:23:10 ICT" duration-ms="12474" status="PASS">
+    <test started-at="2023-07-09T08:33:31 ICT" name="Default test" finished-at="2023-07-09T08:33:47 ICT" duration-ms="15315">
+      <class name="automation.testsuite.Day14_ClientsTest">
+        <test-method is-config="true" signature="initChrome()[pri:0, instance:automation.testsuite.Day14_ClientsTest@5524cca1]" started-at="2023-07-09T08:33:31 ICT" name="initChrome" finished-at="2023-07-09T08:33:47 ICT" duration-ms="15297" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- openChromeDriver -->
-        <test-method signature="loginFail_IncorrectPass()[pri:0, instance:automation.testsuite.ThangDuong.Day13_LoginTest@16eb3ea3]" started-at="2023-07-07T00:23:10 ICT" name="loginFail_IncorrectPass" finished-at="2023-07-07T00:23:13 ICT" duration-ms="3076" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginFail_IncorrectPass -->
-        <test-method signature="loginSuccesfully()[pri:0, instance:automation.testsuite.ThangDuong.Day13_LoginTest@16eb3ea3]" started-at="2023-07-07T00:23:13 ICT" name="loginSuccesfully" finished-at="2023-07-07T00:23:19 ICT" duration-ms="5504" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginSuccesfully -->
-        <test-method is-config="true" signature="closeChromeDriver()[pri:0, instance:automation.testsuite.ThangDuong.Day13_LoginTest@16eb3ea3]" started-at="2023-07-07T00:23:19 ICT" name="closeChromeDriver" finished-at="2023-07-07T00:23:19 ICT" duration-ms="370" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeChromeDriver -->
-      </class> <!-- automation.testsuite.ThangDuong.Day13_LoginTest -->
+        </test-method> <!-- initChrome -->
+      </class> <!-- automation.testsuite.Day14_ClientsTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

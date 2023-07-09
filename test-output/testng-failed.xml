@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="automation.testsuite.ThangDuong.LoginTest_Factory">
+      <class name="automation.testsuite.Day14_ClientsTest">
         <methods>
-          <include name="openChromeDriver"/>
-          <include name="loginSuccesfully"/>
-          <include name="closeChromeDriver"/>
+          <include name="initChrome"/>
+          <include name="addClient"/>
         </methods>
-      </class> <!-- automation.testsuite.ThangDuong.LoginTest_Factory -->
+      </class> <!-- automation.testsuite.Day14_ClientsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
