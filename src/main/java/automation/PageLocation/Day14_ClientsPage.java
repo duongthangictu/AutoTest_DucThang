@@ -3,6 +3,7 @@ package automation.PageLocation;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class Day14_ClientsPage {
 
@@ -16,7 +17,7 @@ public class Day14_ClientsPage {
 	private WebElement Person;
 
 	@FindBy(id = "company_name")
-	private WebElement CompanyName;
+	private WebElement txtCompanyName;
 
 	@FindBy(id = "select2-chosen-3")
 	private WebElement Owner;
@@ -69,9 +70,16 @@ public class Day14_ClientsPage {
 	@FindBy(xpath = "(//div[@id='link-of-add-contact-modal']/following::button)[3]")
 	private WebElement btnSave;
 
-	public void addClient() {
-		txtOganization.sendKeys("WIN");
-		txtAddress.sendKeys("Van Tri");
+	public Day14_ClientsPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+
+	public void addClient(String companayName, String address) {
+//		((WebElement) Day14_DashboardPage_Factory.clientsLinkBy).click();
+		txtCompanyName.sendKeys(companayName);
+		txtAddress.sendKeys(address);
+
 		txtCity.sendKeys("Ha Noi");
 		txtState.sendKeys("HN");
 		txtZip.sendKeys("123");
@@ -80,6 +88,7 @@ public class Day14_ClientsPage {
 		txtWebsite.sendKeys("123.com");
 		txtVATNumber.sendKeys("123");
 		txtGSTNumber.sendKeys("123");
-		btnSave.click();
+//		btnSave.click();
+
 	}
 }

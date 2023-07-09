@@ -24,7 +24,7 @@ public class Day14_ClientsTest extends CommonBase {
 	@Test
 	public void addClient() {
 		Day14_LoginPage_Factory loginPage_Factory = new Day14_LoginPage_Factory(driver);
-		loginPage_Factory.LoginFunction("admin@demo.com", "riseDemo_Incorrect");
+		loginPage_Factory.LoginFunction("admin@demo.com", "riseDemo");
 
 		// sau khi login thanh cong > click Clients linh trong Dashboard > Click button
 		// Add client
@@ -37,9 +37,9 @@ public class Day14_ClientsTest extends CommonBase {
 		btnAddClientElement.click();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-		Day14_ClientsPage addClients_Infor = new Day14_ClientsPage();
-		addClients_Infor.addClient();
+		Day14_ClientsPage addClients_Infor = new Day14_ClientsPage(driver);
+		addClients_Infor.addClient("abv", "HN");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		
+
 	}
 }
