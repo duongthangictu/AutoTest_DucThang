@@ -1,8 +1,6 @@
-package automation.testsuite;
+package ZZZ_automation.testsuite.day13;
 
 import static org.testng.Assert.assertTrue;
-
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,13 +9,11 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import ZZZ_automation.PageLocation.Day13.Day13_LoginPage;
-import ZZZ_automation.PageLocation.Day13.LoginPage_Factory;
 import ZZZ_automation.constant.day13.Day13_CT_Account;
 import automation.PageLocation.DashboardPage;
 import automation.common.CommonBase;
 
-public class LoginTest_Factory extends CommonBase {
-
+public class Day13_LoginTest extends CommonBase {
 	WebDriver driver;
 
 	@BeforeTest
@@ -25,22 +21,11 @@ public class LoginTest_Factory extends CommonBase {
 		driver = initDriverTest(Day13_CT_Account.webURL);
 	}
 
-	/*
-	 * @Test public void loginSuccesfully() { Day13_LoginPage login = new
-	 * Day13_LoginPage(driver); login.Login("admin@demo.com", "riseDemo");
-	 * 
-	 * // Kiem tra text cua trang Dashboard duoc hien thi sau khi dang nhap thanh
-	 * cong WebElement titleDashboard =
-	 * driver.findElement(Day13_DashboardPage.textDashboard);
-	 * assertTrue(titleDashboard.isDisplayed()); }
-	 */
-
 	@Test
 	public void loginSuccesfully() {
-		LoginPage_Factory login = new LoginPage_Factory(driver);
-		login.LoginFunction("admin@demo.com", "riseDemo");
+		Day13_LoginPage login = new Day13_LoginPage(driver);
+		login.Login("admin@demo.com", "riseDemo");
 
-		driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
 		// Kiem tra text cua trang Dashboard duoc hien thi sau khi dang nhap thanh cong
 		WebElement titleDashboard = driver.findElement(DashboardPage.textDashboard);
 		assertTrue(titleDashboard.isDisplayed());
@@ -56,7 +41,8 @@ public class LoginTest_Factory extends CommonBase {
 		WebElement extError = driver.findElement(Day13_LoginPage.errorAuthenticationBy);
 		assertTrue(extError.isDisplayed());
 	}
-
+	
+	
 	/*
 	 * @Test public void loginFail_Email() { Day13_LoginPage login = new
 	 * Day13_LoginPage(driver); login.Login("admin@demo.com_Incorrect", "riseDemo");
@@ -66,5 +52,7 @@ public class LoginTest_Factory extends CommonBase {
 	@AfterTest
 	public void closeChromeDriver() {
 		quitDriver(driver);
+
 	}
+
 }

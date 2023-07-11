@@ -3,9 +3,9 @@ package automation.testsuite;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 
-import automation.PageLocation.LoginPage_Factory;
+import ZZZ_automation.PageLocation.Day13.LoginPage_Factory;
+import ZZZ_automation.constant.day13.Day13_CT_Account;
 import automation.common.CommonBase;
-import automation.constant.Day13_CT_Account;
 
 public class ClientTest extends CommonBase {
 	WebDriver driver;
