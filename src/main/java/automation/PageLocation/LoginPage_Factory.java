@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage_Factory_Day14 {
+public class LoginPage_Factory {
 	WebDriver driver;
 	@FindBy(id = "email")
 	private WebElement txtEmailElement;
@@ -24,7 +24,7 @@ public class LoginPage_Factory_Day14 {
 
 	public static By errAuthen = By.xpath("//div[normalize-space()='Authentication failed!']");
 
-	public LoginPage_Factory_Day14(WebDriver driver) {
+	public LoginPage_Factory(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}

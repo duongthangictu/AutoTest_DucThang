@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="automation.testsuite.ClientsTest_Day14">
+      <class name="automation.testsuite.ClientsTest">
         <methods>
-          <include name="initChrome"/>
           <include name="addClientSuccesfully"/>
-          <include name="closeChrome"/>
+          <include name="initChrome"/>
         </methods>
-      </class> <!-- automation.testsuite.ClientsTest_Day14 -->
+      </class> <!-- automation.testsuite.ClientsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,8 +1,11 @@
 package automation.PageLocation;
 
+import static org.testng.Assert.assertTrue;
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,14 +13,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import automation.common.CommonBase;
-import net.sourceforge.htmlunit.corejs.javascript.tools.shell.JSConsole;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
+public class ClientsPage extends CommonBase {
 
-public class ClientsPage_Day14 extends CommonBase {
-
-	// Viet cac Xpath cua clientAdd
 	WebDriver driver;
 
 	@FindBy(xpath = "//label[normalize-space()='Organization']")
@@ -29,8 +27,18 @@ public class ClientsPage_Day14 extends CommonBase {
 	@FindBy(id = "company_name")
 	private WebElement txtCompanyName;
 
-	@FindBy(id = "select2-chosen-3")
-	private WebElement Owner;
+	@FindBy(xpath = "//a[@class='btn btn-default' and @title='Add client']")
+	private WebElement btnAddClient;
+
+	@FindBy(xpath = "//div[@id='s2id_created_by']")
+	private WebElement checkboxOwner;
+
+	@FindBy(xpath = "//ul[@id='select2-results-3']//li[3]")
+	private WebElement ownerItem;
+
+	// Chon Richard Gray voiw xpath = //div[text()='Richard Gray']
+	@FindBy(xpath = "//div[text()='Richard Gray']")
+	private WebElement ownerItem2;
 
 	@FindBy(id = "address")
 	private WebElement txtAddress;
@@ -80,49 +88,28 @@ public class ClientsPage_Day14 extends CommonBase {
 	@FindBy(xpath = "(//div[@id='link-of-add-contact-modal']/following::button)[3]")
 	private WebElement btnSave;
 
-	public ClientsPage_Day14(WebDriver driver) {
+	public ClientsPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	public void addClient(String companyName, String address, String city, String State, String zip, String country,
-			String phone, String website, String VAT_number, String GST_number) {
+	@FindBy(xpath = "//span[text()='Total clients']")
+	private WebElement totalClientCard;
+	@FindBy(xpath = "//input[@type='search']")
+	private WebElement textboxSearch;
+	@FindBy(xpath = "//td[@class=' all']//a[text()='thangduong@demo.com']")
+	private WebElement searchResult;
 
-		// Click Element Clients on the left
-		WebElement clientLinkElement = driver.findElement(DashboardPage.clientsLinkBy);
-		clientLinkElement.click();
+	public void addClient(String companyName, int dropOwner2, String address, String city, String State, String zip,
+			String country, String phone, String website, String VAT_number, String GST_number) {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
-		// Click button Add client > display pop-up
-		WebElement btnAddClientElement = driver.findElement(DashboardPage.btnAddClientBy);
-		btnAddClientElement.click();
+		DashboardPage.clientsLink.click();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		/*
-		 * txtCompanyName.sendKeys(companayName); txtAddress.sendKeys(address);
-		 */
-
-		// Cách 2
+		btnAddClient.click();
 
 		txtCompanyName.sendKeys(companyName);
-		
-		// Select value in Dropdown list "Owner"
-		Select dropdown_OwnerSelect = new Select(driver.findElement(By.xpath("(//div[@class='col-md-9'])[2]")));
-		
-		
-		WebElement dropWeblement = driver.findElement(By.xpath("(//div[@class='col-md-9'])[2]"));
-		dropWeblement.click();
-//		((WebElement) dropdown_OwnerSelect).click();
-		dropdown_OwnerSelect.selectByVisibleText("John Doe");
-		
-		
-		/*
-		 * WebElement selectMyElement = driver.findElement((By.id("s2id_created_by")));
-		 * selectMyElement.click();
-		 * 
-		 * Actions keyDown = new Actions(driver); keyDown.sendKeys(Keys.chord(Keys.DOWN,
-		 * Keys.DOWN)).perform();
-		 */
-		
+		checkboxOwner.click();
+		ownerItem2.click(); // ((WebElement) dropdown_OwnerSelect).click();
 		txtAddress.sendKeys(address);
 		txtCity.sendKeys(city);
 		txtState.sendKeys(State);
@@ -134,19 +121,12 @@ public class ClientsPage_Day14 extends CommonBase {
 		txtGSTNumber.sendKeys(GST_number);
 		btnSave.click();
 
-		// Cach 1
-		/*
-		txtCompanyName.sendKeys("Thang Duong");
-		txtAddress.sendKeys("HN ok");
-		txtCity.sendKeys("Ha Noi");
-		txtState.sendKeys("HN");
-		txtZip.sendKeys("123");
-		txtCountry.sendKeys("HN");
-		txtPhone.sendKeys("099999999");
-		txtWebsite.sendKeys("123.com");
-		txtVATNumber.sendKeys("123");
-		txtGSTNumber.sendKeys("123");
-		btnSave.click();
-		/*/
+		// Dùng JavascriptExecutor để click vào totalClientCard
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", totalClientCard);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		textboxSearch.sendKeys(companyName);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		assertTrue(searchResult.isDisplayed());
+
 	}
 }
