@@ -95,8 +95,10 @@ public class ClientsPage extends CommonBase {
 
 	@FindBy(xpath = "//span[text()='Total clients']")
 	private WebElement totalClientCard;
+
 	@FindBy(xpath = "//input[@type='search']")
 	private WebElement textboxSearch;
+
 	@FindBy(xpath = "//td[@class=' all']//a[text()='thangduong@demo.com']")
 	private WebElement searchResult;
 
@@ -115,6 +117,12 @@ public class ClientsPage extends CommonBase {
 		txtState.sendKeys(State);
 		txtZip.sendKeys(zip);
 		txtCountry.sendKeys(country);
+
+		// Scroll xuống dưới để nhập các element bị ẩn
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement element = driver.findElement(By.id("currency_symbol"));
+		js.executeScript("arguments[0].scrollIntoView(true)", element);
+
 		txtPhone.sendKeys(phone);
 		txtWebsite.sendKeys(website);
 		txtVATNumber.sendKeys(VAT_number);
@@ -125,7 +133,9 @@ public class ClientsPage extends CommonBase {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", totalClientCard);
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		textboxSearch.sendKeys(companyName);
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
+		// Dùng JS để dừng việc load page
+		((JavascriptExecutor) driver).executeScript("window.stop();");
 		assertTrue(searchResult.isDisplayed());
 
 	}

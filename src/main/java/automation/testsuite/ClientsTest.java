@@ -35,8 +35,10 @@ public class ClientsTest extends CommonBase {
 
 	}
 
-	/*
-	 * @AfterTest public void closeChrome() { quitDriver(driver); }
-	 */
+	@AfterTest
+	public void closeChrome() {
+		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);  // reset thành 0
+		quitDriver(driver);
+	}
 
 }

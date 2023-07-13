@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="automation.testsuite.ClientsTest">
+      <class name="alert_Day16.AlertSenkeys">
         <methods>
-          <include name="addClientSuccesfully"/>
-          <include name="initChrome"/>
+          <include name="openPage"/>
+          <include name="TestAlert"/>
         </methods>
-      </class> <!-- automation.testsuite.ClientsTest -->
+      </class> <!-- alert_Day16.AlertSenkeys -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
