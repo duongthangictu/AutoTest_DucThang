@@ -9,7 +9,7 @@ import automation.common.CommonBase;
 public class AlertSenkeys extends CommonBase {
 	@BeforeTest
 	public void openPage() {
-		driver = initChromeDirvier("https://demo.automationtesting.in/Alerts.html");
+		driver = initChromeDriver("https://demo.automationtesting.in/Alerts.html");
 	}
 
 	@Test

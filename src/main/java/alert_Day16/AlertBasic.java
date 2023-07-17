@@ -10,7 +10,7 @@ import automation.common.CommonBase;
 public class AlertBasic extends CommonBase {
 	@BeforeTest
 	public void openPage() {
-		driver = initChromeDirvier("https://demo.guru99.com/test/delete_customer.php");
+		driver = initChromeDriver("https://demo.guru99.com/test/delete_customer.php");
 	}
 
 	@Test

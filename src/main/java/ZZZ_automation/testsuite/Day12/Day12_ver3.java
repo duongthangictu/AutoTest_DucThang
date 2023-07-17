@@ -13,7 +13,7 @@ public class Day12_ver3 extends CommonBase {
 	@Test
 	public void checkboxSelected() {
 		// open link
-		driver = initDriverTest("https://demo.seleniumeasy.com/basic-checkbox-demo.html");
+		driver = initChromeDriver("https://demo.seleniumeasy.com/basic-checkbox-demo.html");
 
 		WebElement checkboxElement = driver.findElement(By.id("isAgeSelected"));
 		// de check TH else
@@ -33,7 +33,7 @@ public class Day12_ver3 extends CommonBase {
 	// Radio Button Dem
 	@Test
 	public void radioButtonDemoSelected() {
-		driver = initDriverTest("https://demo.seleniumeasy.com/basic-radiobutton-demo.html");
+		driver = initChromeDriver("https://demo.seleniumeasy.com/basic-radiobutton-demo.html");
 		WebElement radioElementMale = driver.findElement(By.xpath("(//input[@value='Male'])[1]"));
 
 		//radioElementMale.click();  check TH else
@@ -53,7 +53,7 @@ public class Day12_ver3 extends CommonBase {
 	
 	@Test
 	public void dropdownList() {
-		driver = initDriverTest("https://demo.seleniumeasy.com/basic-select-dropdown-demo.html");
+		driver = initChromeDriver("https://demo.seleniumeasy.com/basic-select-dropdown-demo.html");
 		
 		Select select = new Select(driver.findElement(By.id("select-demo")));
 		// Check size dropdown list

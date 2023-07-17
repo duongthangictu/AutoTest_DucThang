@@ -13,7 +13,7 @@ public class Day12_Ver2 extends CommonBase {
 	public void isSingleCheckboxSelected() {
 
 		// Open link
-		driver = initDriverTest("https://demo.seleniumeasy.com/basic-checkbox-demo.html");
+		driver = initChromeDriver("https://demo.seleniumeasy.com/basic-checkbox-demo.html");
 		driver.findElement(By.id("isAgeSelected"));
 
 		boolean isSelected = false;
@@ -31,7 +31,7 @@ public class Day12_Ver2 extends CommonBase {
 	@Test
 	public void isRadioButtonSelected() {
 		// Open link
-		driver = initDriverTest("https://demo.seleniumeasy.com/basic-radiobutton-demo.html");
+		driver = initChromeDriver("https://demo.seleniumeasy.com/basic-radiobutton-demo.html");
 
 		System.out.println("=========================================");
 
@@ -53,7 +53,7 @@ public class Day12_Ver2 extends CommonBase {
 
 	@Test
 	public void selectDropdownlist() {
-		driver = initDriverTest("https://demo.seleniumeasy.com/basic-select-dropdown-demo.html");
+		driver = initChromeDriver("https://demo.seleniumeasy.com/basic-select-dropdown-demo.html");
 		Select select = new Select(driver.findElement(By.id("select-demo")));
 
 		System.out.println("Size is: " + select.getOptions().size());

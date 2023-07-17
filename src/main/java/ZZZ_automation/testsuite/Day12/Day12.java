@@ -17,7 +17,7 @@ public class Day12 extends automation.common.CommonBase {
 	
 	@Test
 	public void isSingleCheckboxSelected() {
-		driver = initDriverTest("https://demo.seleniumeasy.com/basic-checkbox-demo.html");
+		driver = initChromeDriver("https://demo.seleniumeasy.com/basic-checkbox-demo.html");
 		driver.findElement(By.id("isAgeSelected")).isSelected();
 		boolean isAgeSelected = false;
 
@@ -30,7 +30,7 @@ public class Day12 extends automation.common.CommonBase {
 
 	@Test
 	public void isRadioButtonSelected() {
-		driver = initDriverTest("https://demo.seleniumeasy.com/basic-radiobutton-demo.html");
+		driver = initChromeDriver("https://demo.seleniumeasy.com/basic-radiobutton-demo.html");
 		// TÌm locator cua Male radiobutton và lưu vào WebElement
 		WebElement checkboxMale = driver.findElement(By.xpath("(//input[@value='Male'])[1]"));
 		checkboxMale.click(); // để có thể làm được TH else
@@ -65,7 +65,7 @@ public class Day12 extends automation.common.CommonBase {
 
 	@Test
 	public void dropDownListChecked() {
-		driver = initDriverTest("https://demo.seleniumeasy.com/basic-select-dropdown-demo.html");
+		driver = initChromeDriver("https://demo.seleniumeasy.com/basic-select-dropdown-demo.html");
 
 		// B2
 		Select select = new Select(driver.findElement(By.id("select-demo")));

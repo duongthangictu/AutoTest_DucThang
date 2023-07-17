@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class Day12_MultiCheckbox extends automation.common.CommonBase{
 	  @BeforeMethod
 	  public void init() {
-	    driver = initDriverTest("https://demo.seleniumeasy.com/basic-checkbox-demo.html");    
+	    driver = initChromeDriver("https://demo.seleniumeasy.com/basic-checkbox-demo.html");    
 	    }
 	  
 	  @Test

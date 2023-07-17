@@ -13,7 +13,7 @@ public class Search extends CommonBase {
 	
 	@BeforeTest
 	public void openWeb() {
-		driver = initChromeDirvier("https://techydevs.com/demos/themes/html/trizen-demo/trizen/index.html");
+		driver = initChromeDriver("https://techydevs.com/demos/themes/html/trizen-demo/trizen/index.html");
 	}
 	
 	@Test

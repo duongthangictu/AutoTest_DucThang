@@ -18,7 +18,7 @@ public class Day13_LoginTest extends CommonBase {
 
 	@BeforeTest
 	public void openChromeDriver() {
-		driver = initDriverTest(Day13_CT_Account.webURL);
+		driver = initChromeDriver(Day13_CT_Account.webURL);
 	}
 
 	@Test
