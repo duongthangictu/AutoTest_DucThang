@@ -7,7 +7,9 @@ public class CT_Account {
 //	//public static By ELEMENT_LOGIN_BUTTON = By.xpath("//input[@value='�?ĂNG NHẬP']");
 //	public static By ELEMENT_LOGOUT_ICON = By.xpath("//*[text()='Logout']/../../..");
 //	public static By ELEMENT_LOGOUT_LINK = By.xpath("//*[text()='Logout']/..");
+
+	public static String webURL = "https://rise.fairsketch.com/signin";
 	
-public static String webURL = "https://rise.fairsketch.com/signin";
-	
+	public static String webURL_Flight = "https://techydevs.com/demos/themes/html/trizen-demo/trizen/index.html";
+
 }

@@ -19,6 +19,7 @@ public class ClientsTest extends CommonBase {
 	@BeforeTest
 	public void initChrome() {
 		driver = initChromeDriver(CT_Account.webURL);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 	@Test
@@ -31,14 +32,14 @@ public class ClientsTest extends CommonBase {
 		ClientsPage addClients_Infor = new ClientsPage(driver);
 		addClients_Infor.addClient("thangduong@demo.com", 0, "TN", "TN2", "TN3", "321", "TN", "0987588688",
 				"ThangDuong2.com", "VAT_321", "GST_312");
-		driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 	}
 
 	@AfterTest
 	public void closeChrome() {
 		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);  // reset thành 0
-		quitDriver(driver);
+//		quitDriver(driver);
 	}
 
 }

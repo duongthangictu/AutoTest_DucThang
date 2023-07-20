@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="automation.testsuite.Iframe">
+      <class name="exercise_Flights.Flight_Test">
         <methods>
-          <include name="openPage"/>
-          <include name="handleIframe"/>
+          <include name="openChrome"/>
+          <include name="flight"/>
+          <include name="closeChrome"/>
         </methods>
-      </class> <!-- automation.testsuite.Iframe -->
+      </class> <!-- exercise_Flights.Flight_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
