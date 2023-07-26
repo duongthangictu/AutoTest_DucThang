@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import automation.common.CommonBase;
 
-public class Fill_InforSearchFlight2 extends CommonBase {
+public class Fill_InforSearchFlight_2 extends CommonBase {
 	WebDriver driver;
 
 	@FindBy(xpath = "(//div[@id='myTabContent3']/descendant::input)[1]")
@@ -55,7 +55,7 @@ public class Fill_InforSearchFlight2 extends CommonBase {
 //	@FindBy(xpath = "(//a[text()='Search Now'])[1]") // Click OK
 	private WebElement btnSearchNow;
 
-	public Fill_InforSearchFlight2(WebDriver driver) {
+	public Fill_InforSearchFlight_2(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}

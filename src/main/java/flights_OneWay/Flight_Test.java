@@ -34,8 +34,12 @@ public class Flight_Test extends CommonBase {
 
 		// (//a[text()='View Details'])[1]
 
-		WebElement scrollTo = driver.findElement(By.xpath("(//a[text()='View Details'])[1]"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)", scrollTo);
+		/*
+		 * WebElement scrollTo =
+		 * driver.findElement(By.xpath("(//a[text()='View Details'])[1]"));
+		 * ((JavascriptExecutor)
+		 * driver).executeScript("arguments[0].scrollIntoView(true)", scrollTo);
+		 */
 
 	}
 

@@ -26,7 +26,7 @@ public class Iframe extends CommonBase {
 	}
 
 	@Test
-	public void findIframe() {
+	public int findIframe() {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		int size = driver.findElements(By.tagName("iframe")).size();
 		System.out.println("So luong iframe " + size);
@@ -38,6 +38,7 @@ public class Iframe extends CommonBase {
 			// Tro ve trang cha de tim kiem den het
 			driver.switchTo().defaultContent();
 		}
+		return size;
 	}
 
 	/*
