@@ -1,5 +1,6 @@
 package bepAnToan;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,15 +32,20 @@ public class OrderDetail extends CommonBase {
 	@FindBy(xpath = "//span[text()='Thanh toán']")
 	private WebElement btnThanhToan;
 	
-	@FindBy(xpath = "//h1[text()='Đặt Hàng Thành Công']")
-	private WebElement titleOrderSuccess;
+//	@FindBy(xpath = "//h1[text()='Đặt Hàng Thành Công']")
+//	private WebElement titleOrderDetailSuccess;
+	public static By titleOrderDetailSuccess = By.xpath("//h1[text()='Đặt Hàng Thành Công']");
+	
+	public static By titleOrderDetail_FAIL_HoVaTen = By.xpath("//small[normalize-space()='Họ và tên không hợp lệ']");
+	public static By titleOrderDetail_FAIL_SDT = By.xpath("//small[normalize-space()='Số điện thoại không hợp lệ']");
+	public static By titleOrderDetail_FAIL_DiaChi = By.xpath("//small[normalize-space()='Địa chỉ không hợp lệ']");
 	
 	public OrderDetail(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	public void orderProductSuccess(String hoVaTen, String SDT, String diaChi, String luuY) {
+	public void orderProduct(String hoVaTen, String SDT, String diaChi, String luuY) {
 		pause(2000);
 		txtHoVaTen.sendKeys(hoVaTen);
 		txtSDT.sendKeys(SDT);
@@ -50,6 +56,7 @@ public class OrderDetail extends CommonBase {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click()", btnThanhToan);
 		btnThanhToan.click();
 		pause(2000);
-		Assert.assertTrue(titleOrderSuccess.isDisplayed());
+		
 	}
+
 }
