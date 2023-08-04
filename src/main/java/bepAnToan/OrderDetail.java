@@ -12,7 +12,7 @@ import automation.common.CommonBase;
 
 public class OrderDetail extends CommonBase {
 
-	WebDriver driver;
+//	WebDriver driver;
 //	private By txtHoVaTen = By.xpath("//input[@placeholder='Nhập họ và tên']");
 	@FindBy(xpath = "//input[@placeholder='Nhập họ và tên']")
 	private WebElement txtHoVaTen;
@@ -32,6 +32,8 @@ public class OrderDetail extends CommonBase {
 	@FindBy(xpath = "//span[text()='Thanh toán']")
 	private WebElement btnThanhToan;
 	
+	private By btnTHanhToan1 = By.xpath("//span[text()='Thanh toán']");
+	
 //	@FindBy(xpath = "//h1[text()='Đặt Hàng Thành Công']")
 //	private WebElement titleOrderDetailSuccess;
 	public static By titleOrderDetailSuccess = By.xpath("//h1[text()='Đặt Hàng Thành Công']");
@@ -46,16 +48,17 @@ public class OrderDetail extends CommonBase {
 	}
 
 	public void orderProduct(String hoVaTen, String SDT, String diaChi, String luuY) {
-		pause(2000);
+//		pause(2000);
 		txtHoVaTen.sendKeys(hoVaTen);
 		txtSDT.sendKeys(SDT);
 		txtDiaChi.sendKeys(diaChi);
 		txtLuuY.sendKeys(luuY);
 		
-		pause(2000);
-		((JavascriptExecutor) driver).executeScript("arguments[0].click()", btnThanhToan);
+//		pause(2000);
+		//((JavascriptExecutor) driver).executeScript("arguments[0].click()", btnThanhToan);
+		clickJavaScript(btnTHanhToan1);
 		btnThanhToan.click();
-		pause(2000);
+//		pause(2000);
 		
 	}
 
